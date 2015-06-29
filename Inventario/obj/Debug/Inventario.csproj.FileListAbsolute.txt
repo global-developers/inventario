@@ -14,3 +14,4 @@ C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bi
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\Inventario.application
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\obj\Debug\Inventario.exe.manifest
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\obj\Debug\Inventario.application
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\obj\Debug\Inventario.csproj.ResolveComReference.cache

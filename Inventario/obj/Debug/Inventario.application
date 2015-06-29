@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Inventario.exe.manifest" size="4232">
+    <dependentAssembly dependencyType="install" codebase="Inventario.exe.manifest" size="5791">
       <assemblyIdentity name="Inventario.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>slJkLr2YlQHun/4qcCA71QR9HQnl4LaSci0YiQ+Pn/M=</dsig:DigestValue>
+        <dsig:DigestValue>PADWVI8qK7S0e3p3c5rewfDunULGL1qFpMyZwUvvjS8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

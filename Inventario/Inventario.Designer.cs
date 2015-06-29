@@ -28,22 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.InicioTabPage = new System.Windows.Forms.TabPage();
+            this.FormPanel = new System.Windows.Forms.Panel();
+            this.SearchLbl = new System.Windows.Forms.Label();
+            this.ColumnLbl = new System.Windows.Forms.Label();
+            this.ColumnsComboBox = new System.Windows.Forms.ComboBox();
+            this.SearchTXT = new System.Windows.Forms.TextBox();
             this.TablesComboBox = new System.Windows.Forms.ComboBox();
             this.TableDataGridView = new System.Windows.Forms.DataGridView();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.CreateBtn = new System.Windows.Forms.Button();
-            this.EditBtn = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
-            this.SearchTXT = new System.Windows.Forms.TextBox();
-            this.ColumnsComboBox = new System.Windows.Forms.ComboBox();
-            this.ColumnLbl = new System.Windows.Forms.Label();
-            this.SearchLbl = new System.Windows.Forms.Label();
+            this.CreateBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.CreateExcelBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.InicioTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).BeginInit();
@@ -59,33 +63,77 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 309);
+            this.tabControl1.Size = new System.Drawing.Size(860, 309);
             this.tabControl1.TabIndex = 2;
             // 
             // InicioTabPage
             // 
+            this.InicioTabPage.Controls.Add(this.ClearBtn);
+            this.InicioTabPage.Controls.Add(this.FormPanel);
+            this.InicioTabPage.Controls.Add(this.SaveBtn);
+            this.InicioTabPage.Controls.Add(this.DeleteBtn);
+            this.InicioTabPage.Controls.Add(this.CreateBtn);
+            this.InicioTabPage.Controls.Add(this.button1);
             this.InicioTabPage.Controls.Add(this.SearchLbl);
             this.InicioTabPage.Controls.Add(this.ColumnLbl);
             this.InicioTabPage.Controls.Add(this.ColumnsComboBox);
             this.InicioTabPage.Controls.Add(this.SearchTXT);
-            this.InicioTabPage.Controls.Add(this.EditBtn);
-            this.InicioTabPage.Controls.Add(this.CreateBtn);
-            this.InicioTabPage.Controls.Add(this.DeleteBtn);
+            this.InicioTabPage.Controls.Add(this.CreateExcelBtn);
             this.InicioTabPage.Controls.Add(this.TablesComboBox);
             this.InicioTabPage.Controls.Add(this.TableDataGridView);
             this.InicioTabPage.Location = new System.Drawing.Point(4, 22);
             this.InicioTabPage.Name = "InicioTabPage";
             this.InicioTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.InicioTabPage.Size = new System.Drawing.Size(792, 283);
+            this.InicioTabPage.Size = new System.Drawing.Size(852, 283);
             this.InicioTabPage.TabIndex = 0;
             this.InicioTabPage.Text = "Base de Datos";
             this.InicioTabPage.UseVisualStyleBackColor = true;
             // 
+            // FormPanel
+            // 
+            this.FormPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormPanel.Location = new System.Drawing.Point(607, 44);
+            this.FormPanel.Name = "FormPanel";
+            this.FormPanel.Size = new System.Drawing.Size(239, 233);
+            this.FormPanel.TabIndex = 15;
+            // 
+            // SearchLbl
+            // 
+            this.SearchLbl.AutoSize = true;
+            this.SearchLbl.Location = new System.Drawing.Point(273, 17);
+            this.SearchLbl.Name = "SearchLbl";
+            this.SearchLbl.Size = new System.Drawing.Size(30, 13);
+            this.SearchLbl.TabIndex = 8;
+            this.SearchLbl.Text = "texto";
+            // 
+            // ColumnLbl
+            // 
+            this.ColumnLbl.AutoSize = true;
+            this.ColumnLbl.Location = new System.Drawing.Point(8, 17);
+            this.ColumnLbl.Name = "ColumnLbl";
+            this.ColumnLbl.Size = new System.Drawing.Size(61, 13);
+            this.ColumnLbl.TabIndex = 7;
+            this.ColumnLbl.Text = "Buscar por ";
+            // 
+            // ColumnsComboBox
+            // 
+            this.ColumnsComboBox.Location = new System.Drawing.Point(75, 12);
+            this.ColumnsComboBox.Name = "ColumnsComboBox";
+            this.ColumnsComboBox.Size = new System.Drawing.Size(192, 21);
+            this.ColumnsComboBox.TabIndex = 6;
+            // 
+            // SearchTXT
+            // 
+            this.SearchTXT.Location = new System.Drawing.Point(309, 14);
+            this.SearchTXT.Name = "SearchTXT";
+            this.SearchTXT.Size = new System.Drawing.Size(180, 20);
+            this.SearchTXT.TabIndex = 5;
+            // 
             // TablesComboBox
             // 
             this.TablesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TablesComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TablesComboBox.Location = new System.Drawing.Point(594, 14);
+            this.TablesComboBox.Location = new System.Drawing.Point(655, 14);
             this.TablesComboBox.Name = "TablesComboBox";
             this.TablesComboBox.Size = new System.Drawing.Size(192, 21);
             this.TablesComboBox.TabIndex = 1;
@@ -94,18 +142,22 @@
             // TableDataGridView
             // 
             this.TableDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            this.TableDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            this.TableDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.TableDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableDataGridView.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.TableDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
+            this.TableDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.TableDataGridView.Location = new System.Drawing.Point(6, 44);
             this.TableDataGridView.Name = "TableDataGridView";
-            this.TableDataGridView.Size = new System.Drawing.Size(780, 233);
+            this.TableDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.TableDataGridView.Size = new System.Drawing.Size(595, 233);
             this.TableDataGridView.TabIndex = 0;
+            this.TableDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableDataGridView_CellDoubleClick);
             // 
             // inicioToolStripMenuItem
             // 
@@ -136,84 +188,94 @@
             this.inicioToolStripMenuItem});
             this.ProductMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ProductMenuStrip.Name = "ProductMenuStrip";
-            this.ProductMenuStrip.Size = new System.Drawing.Size(824, 24);
+            this.ProductMenuStrip.Size = new System.Drawing.Size(884, 24);
             this.ProductMenuStrip.TabIndex = 3;
             this.ProductMenuStrip.Text = "ProductMenuStrip";
             // 
-            // CreateBtn
+            // ClearBtn
             // 
-            this.CreateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CreateBtn.BackgroundImage = global::Inventario.Properties.Resources.create;
-            this.CreateBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CreateBtn.Location = new System.Drawing.Point(513, 14);
-            this.CreateBtn.Name = "CreateBtn";
-            this.CreateBtn.Size = new System.Drawing.Size(21, 21);
-            this.CreateBtn.TabIndex = 3;
-            this.CreateBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClearBtn.BackgroundImage = global::Inventario.Properties.Resources.clear;
+            this.ClearBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClearBtn.Location = new System.Drawing.Point(495, 14);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(21, 21);
+            this.ClearBtn.TabIndex = 16;
+            this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
-            // EditBtn
+            // SaveBtn
             // 
-            this.EditBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditBtn.BackgroundImage = global::Inventario.Properties.Resources.edit;
-            this.EditBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.EditBtn.Location = new System.Drawing.Point(540, 14);
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(21, 21);
-            this.EditBtn.TabIndex = 4;
-            this.EditBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveBtn.BackgroundImage = global::Inventario.Properties.Resources.save;
+            this.SaveBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.SaveBtn.Enabled = false;
+            this.SaveBtn.Location = new System.Drawing.Point(520, 14);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(21, 21);
+            this.SaveBtn.TabIndex = 13;
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // DeleteBtn
             // 
             this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteBtn.BackgroundImage = global::Inventario.Properties.Resources.delete;
             this.DeleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DeleteBtn.Location = new System.Drawing.Point(567, 14);
+            this.DeleteBtn.Enabled = false;
+            this.DeleteBtn.Location = new System.Drawing.Point(547, 14);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(21, 21);
-            this.DeleteBtn.TabIndex = 2;
+            this.DeleteBtn.TabIndex = 12;
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // SearchTXT
+            // CreateBtn
             // 
-            this.SearchTXT.Location = new System.Drawing.Point(309, 14);
-            this.SearchTXT.Name = "SearchTXT";
-            this.SearchTXT.Size = new System.Drawing.Size(180, 20);
-            this.SearchTXT.TabIndex = 5;
+            this.CreateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CreateBtn.BackgroundImage = global::Inventario.Properties.Resources.create;
+            this.CreateBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CreateBtn.Location = new System.Drawing.Point(574, 14);
+            this.CreateBtn.Name = "CreateBtn";
+            this.CreateBtn.Size = new System.Drawing.Size(21, 21);
+            this.CreateBtn.TabIndex = 11;
+            this.CreateBtn.UseVisualStyleBackColor = true;
+            this.CreateBtn.Click += new System.EventHandler(this.CreateBtn_Click);
             // 
-            // ColumnsComboBox
+            // button1
             // 
-            this.ColumnsComboBox.Location = new System.Drawing.Point(75, 12);
-            this.ColumnsComboBox.Name = "ColumnsComboBox";
-            this.ColumnsComboBox.Size = new System.Drawing.Size(192, 21);
-            this.ColumnsComboBox.TabIndex = 6;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackgroundImage = global::Inventario.Properties.Resources.update;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(601, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(21, 21);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ColumnLbl
+            // CreateExcelBtn
             // 
-            this.ColumnLbl.AutoSize = true;
-            this.ColumnLbl.Location = new System.Drawing.Point(8, 17);
-            this.ColumnLbl.Name = "ColumnLbl";
-            this.ColumnLbl.Size = new System.Drawing.Size(61, 13);
-            this.ColumnLbl.TabIndex = 7;
-            this.ColumnLbl.Text = "Buscar por ";
-            // 
-            // SearchLbl
-            // 
-            this.SearchLbl.AutoSize = true;
-            this.SearchLbl.Location = new System.Drawing.Point(273, 17);
-            this.SearchLbl.Name = "SearchLbl";
-            this.SearchLbl.Size = new System.Drawing.Size(30, 13);
-            this.SearchLbl.TabIndex = 8;
-            this.SearchLbl.Text = "texto";
+            this.CreateExcelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CreateExcelBtn.BackgroundImage = global::Inventario.Properties.Resources.excel;
+            this.CreateExcelBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CreateExcelBtn.Location = new System.Drawing.Point(628, 14);
+            this.CreateExcelBtn.Name = "CreateExcelBtn";
+            this.CreateExcelBtn.Size = new System.Drawing.Size(21, 21);
+            this.CreateExcelBtn.TabIndex = 3;
+            this.CreateExcelBtn.UseVisualStyleBackColor = true;
+            this.CreateExcelBtn.Click += new System.EventHandler(this.CreateExcelBtn_Click);
             // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(824, 362);
+            this.ClientSize = new System.Drawing.Size(884, 362);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.ProductMenuStrip);
             this.MainMenuStrip = this.ProductMenuStrip;
+            this.MinimumSize = new System.Drawing.Size(900, 400);
             this.Name = "Inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario";
@@ -235,18 +297,22 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage InicioTabPage;
         private System.Windows.Forms.DataGridView TableDataGridView;
-        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip ProductMenuStrip;
         private System.Windows.Forms.ComboBox TablesComboBox;
-        private System.Windows.Forms.Button EditBtn;
-        private System.Windows.Forms.Button CreateBtn;
-        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button CreateExcelBtn;
         private System.Windows.Forms.ComboBox ColumnsComboBox;
         private System.Windows.Forms.TextBox SearchTXT;
         private System.Windows.Forms.Label SearchLbl;
         private System.Windows.Forms.Label ColumnLbl;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button CreateBtn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Panel FormPanel;
+        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip ProductMenuStrip;
+        private System.Windows.Forms.Button ClearBtn;
 
     }
 }
