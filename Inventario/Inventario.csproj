@@ -114,6 +114,12 @@
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Config\team.json" />
     <None Include="Config\database.json" />
@@ -207,6 +216,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="power.ico" />
+    <None Include="Resources\shopping-add.png" />
+    <None Include="Resources\shopping-cancel.png" />
+    <None Include="Resources\shopping.png" />
     <None Include="Resources\clear.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\update.png" />

@@ -73,14 +73,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario.exe" size="881104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario.exe" size="890832">
       <assemblyIdentity name="Inventario" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>J3b6iKmHuWneVThseMhvZ2/qwgMbEqP2TvrgaStxcjU=</dsig:DigestValue>
+        <dsig:DigestValue>anhwjE3kCZ5DNNp06EYOjETYiOvDDdgQTOHk2zFQSRQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -27,6 +27,7 @@ namespace Inventario
         {
             this.parent = parent;
             inventario = new Inventario(this);
+            ventas = new Ventas(this);
         }
 
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
@@ -147,12 +148,12 @@ namespace Inventario
             {
                 MySqlCommand cmd = cnn.GetMysqlCommand(String.Format(query, email, password));
                 var reader = cmd.ExecuteReader();
-                User user = new User();
 
                 if (reader.HasRows) 
                 {
                     while(reader.Read())
                     {
+                        user = new User();
                         user.Id = reader.GetInt32(0);
                         user.FullName = reader.GetString(1);
                         user.Email = reader.GetString(2);
@@ -163,19 +164,29 @@ namespace Inventario
 
                     MessageBox.Show("Bienvenido " + user.Category.Name + " " +  user.FullName);
 
-                }
+                    if (user.CategoryId == 1 || user.Category.Name.Equals("Administrador"))
+                    {
+                        inventario.Show();
+                        this.Hide();
+                    }
+                    else if (user.CategoryId == 2 || user.Category.Name.Equals("Vendedor"))
+                    {
+                        ventas.Show();
+                        this.Hide();
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Usted no cuenta con permiso para accesar!!!");
+                    }
 
-                reader.Close();
-
-                if (user.CategoryId == 1 || user.CategoryId == 1)
-                {
-                    inventario.Show();
-                    this.Hide();
                 }
                 else
                 {
+                    user = null;
                     MessageBox.Show(String.Format("{0} ó {1} incorrectos", UsernameLbl.Text.ToString(), PasswordLbl.Text.ToString()));
                 }
+
+                reader.Close();
 
             }
 
@@ -194,5 +205,7 @@ namespace Inventario
         public static string query = "SELECT * FROM users, categories WHERE users.email='{0}' AND users.password='{1}' AND users.id=categories.id";
         private static Connection cnn = new Connection();
         private Inventario inventario;
+        private Ventas ventas;
+        private User user;
     }
 }

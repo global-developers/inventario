@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.InicioTabPage = new System.Windows.Forms.TabPage();
+            this.ClearBtn = new System.Windows.Forms.Button();
             this.FormPanel = new System.Windows.Forms.Panel();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.CreateBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SearchLbl = new System.Windows.Forms.Label();
             this.ColumnLbl = new System.Windows.Forms.Label();
             this.ColumnsComboBox = new System.Windows.Forms.ComboBox();
             this.SearchTXT = new System.Windows.Forms.TextBox();
+            this.CreateExcelBtn = new System.Windows.Forms.Button();
             this.TablesComboBox = new System.Windows.Forms.ComboBox();
             this.TableDataGridView = new System.Windows.Forms.DataGridView();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.ClearBtn = new System.Windows.Forms.Button();
-            this.SaveBtn = new System.Windows.Forms.Button();
-            this.DeleteBtn = new System.Windows.Forms.Button();
-            this.CreateBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CreateExcelBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.InicioTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TableDataGridView)).BeginInit();
@@ -89,109 +89,6 @@
             this.InicioTabPage.Text = "Base de Datos";
             this.InicioTabPage.UseVisualStyleBackColor = true;
             // 
-            // FormPanel
-            // 
-            this.FormPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FormPanel.Location = new System.Drawing.Point(607, 44);
-            this.FormPanel.Name = "FormPanel";
-            this.FormPanel.Size = new System.Drawing.Size(239, 233);
-            this.FormPanel.TabIndex = 15;
-            // 
-            // SearchLbl
-            // 
-            this.SearchLbl.AutoSize = true;
-            this.SearchLbl.Location = new System.Drawing.Point(273, 17);
-            this.SearchLbl.Name = "SearchLbl";
-            this.SearchLbl.Size = new System.Drawing.Size(30, 13);
-            this.SearchLbl.TabIndex = 8;
-            this.SearchLbl.Text = "texto";
-            // 
-            // ColumnLbl
-            // 
-            this.ColumnLbl.AutoSize = true;
-            this.ColumnLbl.Location = new System.Drawing.Point(8, 17);
-            this.ColumnLbl.Name = "ColumnLbl";
-            this.ColumnLbl.Size = new System.Drawing.Size(61, 13);
-            this.ColumnLbl.TabIndex = 7;
-            this.ColumnLbl.Text = "Buscar por ";
-            // 
-            // ColumnsComboBox
-            // 
-            this.ColumnsComboBox.Location = new System.Drawing.Point(75, 12);
-            this.ColumnsComboBox.Name = "ColumnsComboBox";
-            this.ColumnsComboBox.Size = new System.Drawing.Size(192, 21);
-            this.ColumnsComboBox.TabIndex = 6;
-            // 
-            // SearchTXT
-            // 
-            this.SearchTXT.Location = new System.Drawing.Point(309, 14);
-            this.SearchTXT.Name = "SearchTXT";
-            this.SearchTXT.Size = new System.Drawing.Size(180, 20);
-            this.SearchTXT.TabIndex = 5;
-            // 
-            // TablesComboBox
-            // 
-            this.TablesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TablesComboBox.Location = new System.Drawing.Point(655, 14);
-            this.TablesComboBox.Name = "TablesComboBox";
-            this.TablesComboBox.Size = new System.Drawing.Size(192, 21);
-            this.TablesComboBox.TabIndex = 1;
-            this.TablesComboBox.SelectedValueChanged += new System.EventHandler(this.TablesComboBox_SelectedValueChanged);
-            // 
-            // TableDataGridView
-            // 
-            this.TableDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            this.TableDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.TableDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TableDataGridView.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.TableDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TableDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.TableDataGridView.Location = new System.Drawing.Point(6, 44);
-            this.TableDataGridView.Name = "TableDataGridView";
-            this.TableDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.TableDataGridView.Size = new System.Drawing.Size(595, 233);
-            this.TableDataGridView.TabIndex = 0;
-            this.TableDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableDataGridView_CellDoubleClick);
-            // 
-            // inicioToolStripMenuItem
-            // 
-            this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutToolStripMenuItem,
-            this.acercaDeToolStripMenuItem});
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.inicioToolStripMenuItem.Text = "Inicio";
-            // 
-            // AboutToolStripMenuItem
-            // 
-            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.AboutToolStripMenuItem.Text = "Acerca de PowerDev";
-            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
-            // 
-            // acercaDeToolStripMenuItem
-            // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.acercaDeToolStripMenuItem.Text = "Salir";
-            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
-            // 
-            // ProductMenuStrip
-            // 
-            this.ProductMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem});
-            this.ProductMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.ProductMenuStrip.Name = "ProductMenuStrip";
-            this.ProductMenuStrip.Size = new System.Drawing.Size(884, 24);
-            this.ProductMenuStrip.TabIndex = 3;
-            this.ProductMenuStrip.Text = "ProductMenuStrip";
-            // 
             // ClearBtn
             // 
             this.ClearBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,6 +100,15 @@
             this.ClearBtn.TabIndex = 16;
             this.ClearBtn.UseVisualStyleBackColor = true;
             this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
+            // FormPanel
+            // 
+            this.FormPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.FormPanel.Location = new System.Drawing.Point(607, 44);
+            this.FormPanel.Name = "FormPanel";
+            this.FormPanel.Size = new System.Drawing.Size(239, 233);
+            this.FormPanel.TabIndex = 15;
             // 
             // SaveBtn
             // 
@@ -254,6 +160,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // SearchLbl
+            // 
+            this.SearchLbl.AutoSize = true;
+            this.SearchLbl.Location = new System.Drawing.Point(273, 17);
+            this.SearchLbl.Name = "SearchLbl";
+            this.SearchLbl.Size = new System.Drawing.Size(30, 13);
+            this.SearchLbl.TabIndex = 8;
+            this.SearchLbl.Text = "texto";
+            // 
+            // ColumnLbl
+            // 
+            this.ColumnLbl.AutoSize = true;
+            this.ColumnLbl.Location = new System.Drawing.Point(8, 17);
+            this.ColumnLbl.Name = "ColumnLbl";
+            this.ColumnLbl.Size = new System.Drawing.Size(61, 13);
+            this.ColumnLbl.TabIndex = 7;
+            this.ColumnLbl.Text = "Buscar por ";
+            // 
+            // ColumnsComboBox
+            // 
+            this.ColumnsComboBox.Location = new System.Drawing.Point(75, 12);
+            this.ColumnsComboBox.Name = "ColumnsComboBox";
+            this.ColumnsComboBox.Size = new System.Drawing.Size(192, 21);
+            this.ColumnsComboBox.TabIndex = 6;
+            // 
+            // SearchTXT
+            // 
+            this.SearchTXT.Location = new System.Drawing.Point(309, 14);
+            this.SearchTXT.Name = "SearchTXT";
+            this.SearchTXT.Size = new System.Drawing.Size(180, 20);
+            this.SearchTXT.TabIndex = 5;
+            // 
             // CreateExcelBtn
             // 
             this.CreateExcelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -265,6 +203,68 @@
             this.CreateExcelBtn.TabIndex = 3;
             this.CreateExcelBtn.UseVisualStyleBackColor = true;
             this.CreateExcelBtn.Click += new System.EventHandler(this.CreateExcelBtn_Click);
+            // 
+            // TablesComboBox
+            // 
+            this.TablesComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TablesComboBox.Location = new System.Drawing.Point(655, 14);
+            this.TablesComboBox.Name = "TablesComboBox";
+            this.TablesComboBox.Size = new System.Drawing.Size(192, 21);
+            this.TablesComboBox.TabIndex = 1;
+            this.TablesComboBox.SelectedValueChanged += new System.EventHandler(this.TablesComboBox_SelectedValueChanged);
+            // 
+            // TableDataGridView
+            // 
+            this.TableDataGridView.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            this.TableDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.TableDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableDataGridView.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.TableDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TableDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.TableDataGridView.Location = new System.Drawing.Point(6, 44);
+            this.TableDataGridView.Name = "TableDataGridView";
+            this.TableDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.TableDataGridView.Size = new System.Drawing.Size(595, 233);
+            this.TableDataGridView.TabIndex = 0;
+            this.TableDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableDataGridView_CellDoubleClick);
+            // 
+            // inicioToolStripMenuItem
+            // 
+            this.inicioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
+            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.inicioToolStripMenuItem.Text = "Inicio";
+            // 
+            // AboutToolStripMenuItem
+            // 
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.AboutToolStripMenuItem.Text = "Acerca de PowerDev";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.acercaDeToolStripMenuItem.Text = "Cerrar sesión";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            // 
+            // ProductMenuStrip
+            // 
+            this.ProductMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inicioToolStripMenuItem});
+            this.ProductMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.ProductMenuStrip.Name = "ProductMenuStrip";
+            this.ProductMenuStrip.Size = new System.Drawing.Size(884, 24);
+            this.ProductMenuStrip.TabIndex = 3;
+            this.ProductMenuStrip.Text = "ProductMenuStrip";
             // 
             // Inventario
             // 
