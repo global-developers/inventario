@@ -19,6 +19,7 @@ namespace Inventario.Helpers
                 cmd = GetMysqlCommand();
                 version = Convert.ToString(cmd.ExecuteScalar());
             } catch (MySqlException e) {
+                // MetroFramework.MetroMessageBox.Show(null, e.Message, "Fatal error - PowerDev", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
                 System.Windows.Forms.MessageBox.Show(e.Message);
                 close();
             }

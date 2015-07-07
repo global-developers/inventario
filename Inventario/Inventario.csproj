@@ -228,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1436249533_power_blue.ico" />
+    <None Include="Resources\1492547_662630663801114_1242483105_o1.jpg" />
+    <None Include="Resources\1492547_662630663801114_1242483105_o.jpg" />
+    <None Include="Resources\1016441_645645015448055_1865391124_n.jpg" />
     <None Include="Resources\1436262829_pdf.png" />
     <None Include="Resources\1436249533_power_blue.png" />
     <None Include="Resources\yo.jpg" />

@@ -30,26 +30,26 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,47 +79,6 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = true;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.Location = new System.Drawing.Point(118, 3);
-            this.metroLabel3.MinimumSize = new System.Drawing.Size(0, 30);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(158, 30);
-            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroLabel3.TabIndex = 1;
-            this.metroLabel3.Text = "Cristian Jaramillo";
-            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox3.Image = global::Inventario.Properties.Resources.yo;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(109, 118);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(118, 33);
-            this.metroLabel1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(103, 30);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
-            this.metroLabel1.TabIndex = 5;
-            this.metroLabel1.Text = "Web Developer";
-            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -133,6 +92,35 @@
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel2.UseStyleColors = true;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(118, 33);
+            this.metroLabel1.MinimumSize = new System.Drawing.Size(0, 30);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(71, 30);
+            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroLabel1.TabIndex = 5;
+            this.metroLabel1.Text = "Developer";
+            this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.Location = new System.Drawing.Point(118, 3);
+            this.metroLabel3.MinimumSize = new System.Drawing.Size(0, 30);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(158, 25);
+            this.metroLabel3.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroLabel3.TabIndex = 1;
+            this.metroLabel3.Text = "Cristian Jaramillo";
+            this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroPanel2
             // 
@@ -159,10 +147,10 @@
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel4.Location = new System.Drawing.Point(118, 63);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(197, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(174, 19);
             this.metroLabel4.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroLabel4.TabIndex = 6;
-            this.metroLabel4.Text = "cristian_gerar@hotmail.com";
+            this.metroLabel4.Text = "andymenjos@gmail.com";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel4.UseStyleColors = true;
@@ -174,10 +162,10 @@
             this.metroLabel5.Location = new System.Drawing.Point(118, 33);
             this.metroLabel5.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(103, 30);
+            this.metroLabel5.Size = new System.Drawing.Size(114, 30);
             this.metroLabel5.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel5.TabIndex = 5;
-            this.metroLabel5.Text = "Web Developer";
+            this.metroLabel5.Text = "Proyect Manager";
             this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -189,24 +177,12 @@
             this.metroLabel6.Location = new System.Drawing.Point(118, 3);
             this.metroLabel6.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(158, 30);
+            this.metroLabel6.Size = new System.Drawing.Size(147, 30);
             this.metroLabel6.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel6.TabIndex = 1;
-            this.metroLabel6.Text = "Cristian Jaramillo";
+            this.metroLabel6.Text = "Andrea Mendez";
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.Image = global::Inventario.Properties.Resources.yo;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 118);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // metroPanel3
             // 
@@ -233,10 +209,10 @@
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel7.Location = new System.Drawing.Point(118, 63);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(197, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(190, 19);
             this.metroLabel7.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroLabel7.TabIndex = 6;
-            this.metroLabel7.Text = "cristian_gerar@hotmail.com";
+            this.metroLabel7.Text = "monicadlr18@hotmail.com";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel7.UseStyleColors = true;
@@ -248,10 +224,10 @@
             this.metroLabel8.Location = new System.Drawing.Point(118, 33);
             this.metroLabel8.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(103, 30);
+            this.metroLabel8.Size = new System.Drawing.Size(58, 30);
             this.metroLabel8.Style = MetroFramework.MetroColorStyle.Black;
             this.metroLabel8.TabIndex = 5;
-            this.metroLabel8.Text = "Web Developer";
+            this.metroLabel8.Text = "Designe";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -263,10 +239,10 @@
             this.metroLabel9.Location = new System.Drawing.Point(118, 3);
             this.metroLabel9.MinimumSize = new System.Drawing.Size(0, 30);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(158, 30);
+            this.metroLabel9.Size = new System.Drawing.Size(173, 30);
             this.metroLabel9.Style = MetroFramework.MetroColorStyle.Green;
             this.metroLabel9.TabIndex = 1;
-            this.metroLabel9.Text = "Cristian Jaramillo";
+            this.metroLabel9.Text = "Monica De La Rosa";
             this.metroLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel9.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -274,13 +250,37 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox2.Image = global::Inventario.Properties.Resources.yo;
+            this.pictureBox2.Image = global::Inventario.Properties.Resources._1492547_662630663801114_1242483105_o1;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(109, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = global::Inventario.Properties.Resources._1016441_645645015448055_1865391124_n;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox3.Image = global::Inventario.Properties.Resources.yo;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(109, 118);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // About
             // 
@@ -298,13 +298,13 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -124,6 +124,9 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -132,14 +135,16 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.95082F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.04918F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.13115F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.86885F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 244);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.metroTile3);
             this.panel1.Controls.Add(this.metroTile2);
@@ -147,10 +152,10 @@
             this.panel1.Controls.Add(this.metroTile1);
             this.panel1.Controls.Add(this.metroLabel1);
             this.panel1.Controls.Add(this.metroTextBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.MaximumSize = new System.Drawing.Size(0, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 50);
+            this.panel1.Size = new System.Drawing.Size(846, 47);
             this.panel1.TabIndex = 0;
             // 
             // metroTile3
@@ -177,6 +182,7 @@
             // 
             // metroLabel2
             // 
+            this.metroLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
@@ -226,6 +232,9 @@
             // 
             // metroGrid1
             // 
+            this.metroGrid1.AllowUserToAddRows = false;
+            this.metroGrid1.AllowUserToDeleteRows = false;
+            this.metroGrid1.AllowUserToOrderColumns = true;
             this.metroGrid1.AllowUserToResizeRows = false;
             this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -258,8 +267,9 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(3, 59);
+            this.metroGrid1.Location = new System.Drawing.Point(3, 56);
             this.metroGrid1.Name = "metroGrid1";
+            this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -271,33 +281,38 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(846, 182);
+            this.metroGrid1.Size = new System.Drawing.Size(846, 185);
             this.metroGrid1.TabIndex = 1;
             // 
             // IdProductColumn
             // 
             this.IdProductColumn.HeaderText = "ID Product";
             this.IdProductColumn.Name = "IdProductColumn";
+            this.IdProductColumn.ReadOnly = true;
             // 
             // NameProductColumn
             // 
             this.NameProductColumn.HeaderText = "Name";
             this.NameProductColumn.Name = "NameProductColumn";
+            this.NameProductColumn.ReadOnly = true;
             // 
             // DescriptionProductColumn
             // 
             this.DescriptionProductColumn.HeaderText = "Description";
             this.DescriptionProductColumn.Name = "DescriptionProductColumn";
+            this.DescriptionProductColumn.ReadOnly = true;
             // 
             // PriceProductColumn
             // 
             this.PriceProductColumn.HeaderText = "Price";
             this.PriceProductColumn.Name = "PriceProductColumn";
+            this.PriceProductColumn.ReadOnly = true;
             // 
             // CountProductColumn
             // 
             this.CountProductColumn.HeaderText = "Count";
             this.CountProductColumn.Name = "CountProductColumn";
+            this.CountProductColumn.ReadOnly = true;
             // 
             // Ventas
             // 

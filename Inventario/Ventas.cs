@@ -73,7 +73,30 @@ namespace Inventario
                         product = new Product();
                         product.Id = reader.GetInt32(0);
                         product.Name = reader.GetString(1);
-                        product.Price = reader.GetDouble(2);
+                        product.Description = reader.GetString(2);
+                        product.Price = reader.GetDouble(3);
+                        product.Color = reader.GetString(4);
+                        product.Barcode = reader.GetString(5);
+                        product.Count = reader.GetInt32(6);
+
+                        int row = SearchId(product.Id);
+
+                        if (row != -1)
+                        {
+                            metroGrid1.Rows[row].Cells[4].Value = Convert.ToInt32(metroGrid1.Rows[row].Cells[4].Value) + 1;
+                        }
+                        else {
+                            metroGrid1.Rows.Add();
+                            int last = metroGrid1.Rows.Count - 1;
+
+                            metroGrid1.Rows[last].Cells[0].Value = product.Id;
+                            metroGrid1.Rows[last].Cells[1].Value = product.Name;
+                            metroGrid1.Rows[last].Cells[2].Value = product.Description;
+                            metroGrid1.Rows[last].Cells[3].Value = product.Price;
+                            metroGrid1.Rows[last].Cells[4].Value = 1;
+                        }
+
+                    
                     }
                 }
                 else {
@@ -87,5 +110,24 @@ namespace Inventario
                 MetroMessageBox.Show(this, "La información proporcionada es invalida", "Ventas - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private int SearchId(int id)
+        {
+            int row = -1;
+            
+            for (int i = 0; i < metroGrid1.Rows.Count; i++ )
+            {
+                if (Convert.ToInt32(metroGrid1.Rows[i].Cells[0].Value) == id)
+                {
+                    row = i;
+                    break;
+                }
+
+            }
+
+            return row;
+        }
+
     }
 }

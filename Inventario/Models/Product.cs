@@ -32,6 +32,18 @@ namespace Inventario.Models
             set { price = value; }
         }
 
+        public string Barcode
+        {
+            get { return barcode; }
+            set { barcode = value; }
+        }
+
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
+
         public int Count
         {
             get { return count; }
@@ -42,6 +54,8 @@ namespace Inventario.Models
         private string name;
         private string description;
         private double price;
+        private string barcode;
+        private string color;
         private int count;
     }
 }

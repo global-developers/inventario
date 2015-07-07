@@ -63,6 +63,16 @@ namespace Inventario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1016441_645645015448055_1865391124_n {
+            get {
+                object obj = ResourceManager.GetObject("1016441_645645015448055_1865391124_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1436249533_power_blue {
             get {
                 object obj = ResourceManager.GetObject("1436249533_power_blue", resourceCulture);
@@ -76,6 +86,26 @@ namespace Inventario.Properties {
         internal static System.Drawing.Bitmap _1436262829_pdf {
             get {
                 object obj = ResourceManager.GetObject("1436262829_pdf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1492547_662630663801114_1242483105_o {
+            get {
+                object obj = ResourceManager.GetObject("1492547_662630663801114_1242483105_o", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1492547_662630663801114_1242483105_o1 {
+            get {
+                object obj = ResourceManager.GetObject("1492547_662630663801114_1242483105_o1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
