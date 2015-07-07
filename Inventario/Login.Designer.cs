@@ -117,6 +117,7 @@
             this.ErrorUsernameLbl.TabIndex = 8;
             this.ErrorUsernameLbl.Text = "Error correo electrónico";
             this.ErrorUsernameLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ErrorUsernameLbl.UseStyleColors = true;
             this.ErrorUsernameLbl.Visible = false;
             // 
             // ErrorPasswordLbl
@@ -126,9 +127,11 @@
             this.ErrorPasswordLbl.Location = new System.Drawing.Point(23, 196);
             this.ErrorPasswordLbl.Name = "ErrorPasswordLbl";
             this.ErrorPasswordLbl.Size = new System.Drawing.Size(141, 19);
+            this.ErrorPasswordLbl.Style = MetroFramework.MetroColorStyle.Orange;
             this.ErrorPasswordLbl.TabIndex = 9;
             this.ErrorPasswordLbl.Text = "Error correo password";
             this.ErrorPasswordLbl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.ErrorPasswordLbl.UseStyleColors = true;
             this.ErrorPasswordLbl.Visible = false;
             // 
             // Login

@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Inventario.Models
 {
     [DataContract (Name = "User")]
-    class User
+    public class User
     {
         [DataMember(Name = "id")]
         public int Id

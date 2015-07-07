@@ -21,3 +21,5 @@ C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bi
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Design.pdb
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Fonts.pdb
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\itextsharp.dll
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\itextsharp.xml

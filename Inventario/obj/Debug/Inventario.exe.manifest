@@ -73,14 +73,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario.exe" size="1071056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Inventario.exe" size="1080272">
       <assemblyIdentity name="Inventario" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dBFmkw52ExyIOoXvhE/U0Y/KZHteuU9WhazG9AZRDXk=</dsig:DigestValue>
+        <dsig:DigestValue>UuzPUZ2qS9Dohzi38tTcTy9z374TGqDE/r0p8+kh7jg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="itextsharp.dll" size="3727360">
+      <assemblyIdentity name="itextsharp" version="5.4.1.0" publicKeyToken="8354AE6D2174DDCA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>AZCvZ569EXQCzucEy+JiUDxPyrAt5mvaJOLZcIQs13E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -136,15 +148,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="power.ico" size="4286">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>O1EuBvjqt914fGLpsI6qLj1MCwXjLmNvpLrMdq3XOGo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

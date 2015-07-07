@@ -18,6 +18,17 @@ namespace Inventario
 {
     public partial class Login : MetroForm
     {
+
+        private Form parent;
+        public static string email_pattern = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
+        public static string password_pattern = @"[0-9a-zA-ZñÑ]{6,12}";
+        public static string query = "SELECT * FROM users, categories WHERE users.email='{0}' AND users.password='{1}' AND users.category_id=categories.id";
+        private static Connection cnn;
+        private Inventario inventario;
+        private Ventas ventas;
+        private User user;
+
+
         public Login()
         {
             InitializeComponent();
@@ -28,43 +39,6 @@ namespace Inventario
         public Login(Form parent) : this()
         {
             this.parent = parent;
-            inventario = new Inventario(this);
-            ventas = new Ventas(this);
-        }
-
-        private void Login_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            parent.Close();
-        }
-
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            cnn.close();
-            this.Close();
-        }
-
-        private void MinBtn_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-
-        private Form parent;
-        private int xR;
-        private int yR;
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            xR = e.X;
-            yR = e.Y;
-        }
-
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Left)
-            {
-                this.Location = new Point(this.Left + e.X - xR, this.Top + e.Y - yR);
-            }
         }
 
         private void SignInBtn_Click(object sender, EventArgs e)
@@ -135,28 +109,30 @@ namespace Inventario
                         user.Category = new Category(reader.GetInt32(7), reader.GetString(8));
                     }
 
-                    MetroMessageBox.Show(this, "Bienvenido " + user.Category.Name + " " + user.FullName, "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(this, "Bienvenido " + user.Category.Name + " " + user.FullName, "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     
                     if (user.CategoryId == 1 || user.Category.Name.Equals("Administrador"))
                     {
+                        inventario = new Inventario(this, user);
                         inventario.Show();
                         this.Hide();
                     }
                     else if (user.CategoryId == 2 || user.Category.Name.Equals("Vendedor"))
                     {
+                        ventas = new Ventas(this, user);
                         ventas.Show();
                         this.Hide();
                     }
                     else 
                     {
-                        MetroMessageBox.Show(this, "Usted no cuenta con permiso para accesar!!!", "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MetroMessageBox.Show(this, "Usted no cuenta con permiso para accesar!!!", "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                 }
                 else
                 {
                     user = null;
-                    MetroMessageBox.Show(this, String.Format("{0} ó {1} incorrectos", UsernameLbl.Text.ToString(), PasswordLbl.Text.ToString()), "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MetroMessageBox.Show(this, String.Format("{0} ó {1} incorrectos", UsernameLbl.Text.ToString(), PasswordLbl.Text.ToString()), "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 reader.Close();
@@ -173,12 +149,10 @@ namespace Inventario
             }
         }
 
-        public static string email_pattern = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
-        public static string password_pattern = @"[0-9a-zA-ZñÑ]{6,12}";
-        public static string query = "SELECT * FROM users, categories WHERE users.email='{0}' AND users.password='{1}' AND users.id=categories.id";
-        private static Connection cnn = new Connection();
-        private Inventario inventario;
-        private Ventas ventas;
-        private User user;
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cnn.close();
+            parent.Close();
+        }
     }
 }

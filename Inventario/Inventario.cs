@@ -11,6 +11,12 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MetroFramework.Forms;
 using MetroFramework.Controls;
+using MetroFramework;
+using iTextSharp.text;
+using System.IO;
+using iTextSharp.text.pdf;
+using Inventario.Models;
+using System.Diagnostics;
 
 namespace Inventario
 {
@@ -19,16 +25,26 @@ namespace Inventario
 
         private Form parent;
         private About about;
-        private static Connection cnn = new Connection();
+        private User user;
+        private static Connection cnn;
+        private string _cell = "";
+        private string select_table = "";
+        private string query_update = "";
+        private string query_insert = "";
+        private string query_delete = "DELETE FROM {0} WHERE id='{1}'";
+        private string query = "SELECT * FROM {0}";
+        private string[] noEdit = new string[3] { "id", "created_at", "updated_at" };
 
         public Inventario()
         {
             InitializeComponent();
+            cnn = new Connection();
         }
 
-        public Inventario(Form parent) : this()
+        public Inventario(Form parent, User user) : this()
         {
             this.parent = parent;
+            this.user = user;
         }
 
         private void Inventario_Shown(object sender, EventArgs e)
@@ -180,8 +196,8 @@ namespace Inventario
                     FormPanel.Controls.Add(label);
                     MetroTextBox textbox = new MetroTextBox();
                     textbox.Location = new Point(_x, 50 + (_y * _columns));
-                    textbox.Size = new Size(232, 23);
-                    textbox.MaximumSize = new Size(232, 23);
+                    textbox.Size = new Size(255, 23);
+                    textbox.MaximumSize = new Size(255, 23);
                     textbox.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right;
                     textbox.Enabled =  Array.Exists(noEdit, element => element == column.Name) ? false : true;
                     textbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
@@ -203,9 +219,9 @@ namespace Inventario
                     if (int.TryParse(control.Text.ToString(), out id))
                     {
                         id = Convert.ToInt32(control.Text.ToString());
-                        var message = String.Format("Esta segudo de eliminar la fila \"{0}\"", id);
+                        var message = String.Format("Esta realmente seguro de eliminar la fila \"{0}\"", id);
 
-                        if (MessageBox.Show(message, "Confirmación de eliminación", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MetroMessageBox.Show(this, message, "Eliminación de registro.", MessageBoxButtons.YesNo, MessageBoxIcon.Hand) == DialogResult.Yes)
                         {
 
                             var cmd = cnn.GetMysqlCommand(String.Format(query_delete, select_table, id));
@@ -218,7 +234,7 @@ namespace Inventario
                     }
                     else
                     {
-                        MessageBox.Show("Elemento no selecionado");
+                        MetroMessageBox.Show(this, "Elemento no selecionado", "Eliminación de registro.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 }
@@ -240,14 +256,6 @@ namespace Inventario
                 }
             }
         }
-
-        private string _cell = "";
-        private string select_table = "";
-        private string query_update = "";
-        private string query_insert = "";
-        private string query_delete = "DELETE FROM {0} WHERE id='{1}'";
-        private string query = "SELECT * FROM {0}";
-        private string[] noEdit = new string[3] {"id", "created_at", "updated_at"};
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -287,7 +295,7 @@ namespace Inventario
                     
                     if(!valid)
                     {
-                        MessageBox.Show("Elemento no selecionado");
+                        MetroMessageBox.Show(this, "Elemento no selecionado", "Creación de registro.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
                 }
@@ -309,11 +317,17 @@ namespace Inventario
             if(valid)
             {
                 query_update += String.Format("  WHERE id='{0}'", id);
-                MessageBox.Show(query_update);
-                var cmd = cnn.GetMysqlCommand(query_update);
-                var reader = cmd.ExecuteReader();
-                reader.Close();
-                UpdateDataGridView();
+
+                var message = String.Format("Esta realmente seguro de eliminar la fila \"{0}\"", id);
+
+                if (MetroMessageBox.Show(this, message, "Actualización de registro.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                { 
+                    // MessageBox.Show(query_update);
+                    var cmd = cnn.GetMysqlCommand(query_update);
+                    var reader = cmd.ExecuteReader();
+                    reader.Close();
+                    UpdateDataGridView();
+                }
             }
 
 
@@ -378,9 +392,106 @@ namespace Inventario
                 UpdateDataGridView();
             }
             else {
-                MessageBox.Show("Existen campos vacios");
+                MetroMessageBox.Show(this, "Existen campos vacios", "Actualización de registro.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void PDFBtn_Click(object sender, EventArgs e)
+        {
+            if(TableDataGridView.RowCount > 0)
+                To_pdf();
+            else
+                MetroMessageBox.Show(this, "No existe contenido.", "Generación de reportes.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        #region crearPDF
+        private void To_pdf()
+        {
+            Document doc = new Document(PageSize.A4.Rotate(), 10, 10, 10, 10);
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = @"C:";
+            saveFileDialog1.Title = "Guardar Reporte";
+            saveFileDialog1.DefaultExt = "pdf";
+            saveFileDialog1.Filter = "pdf Files (*.pdf)|*.pdf| All Files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.FileName = select_table + "-report.pdf";
+            string filename = "";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filename = saveFileDialog1.FileName;
+            }
+
+            if (filename.Trim() != "")
+            {
+                FileStream file = new FileStream(filename,
+                FileMode.OpenOrCreate,
+                FileAccess.ReadWrite,
+                FileShare.ReadWrite);
+                PdfWriter.GetInstance(doc, file);
+                doc.Open();
+                string remito = "Autorizo: " + user.FullName.ToUpper();
+                string envio = "Fecha: " + DateTime.Now.ToString();
+
+                Chunk chunk = new Chunk("Reporte de General de " + select_table.ToUpper(), FontFactory.GetFont("ARIAL", 20, iTextSharp.text.Font.BOLD));
+                doc.Add(new Paragraph(chunk));
+                doc.Add(new Paragraph("                       "));
+                doc.Add(new Paragraph("                       "));
+                doc.Add(new Paragraph("------------------------------------------------------------------------------------------"));
+                doc.Add(new Paragraph("PowerDev - IPN"));
+                doc.Add(new Paragraph(remito));
+                doc.Add(new Paragraph(envio));
+                doc.Add(new Paragraph("------------------------------------------------------------------------------------------"));
+                doc.Add(new Paragraph("                       "));
+                doc.Add(new Paragraph("                       "));
+                doc.Add(new Paragraph("                       "));
+                GenerarDocumento(doc, TableDataGridView);
+                doc.AddCreationDate();
+                doc.Close();
+                Process.Start(filename);//Esta parte se puede omitir, si solo se desea guardar el archivo, y que este no se ejecute al instante
+            }
+
+        }
+        public void GenerarDocumento(Document document, DataGridView dataGridViewContent)
+        {
+            int i, j;
+            PdfPTable datatable = new PdfPTable(dataGridViewContent.ColumnCount);
+            datatable.DefaultCell.Padding = 3;
+            float[] headerwidths = GetTamañoColumnas(dataGridViewContent);
+            datatable.SetWidths(headerwidths);
+            datatable.WidthPercentage = 100;
+            datatable.DefaultCell.BorderWidth = 2;
+            datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            for (i = 0; i < dataGridViewContent.ColumnCount; i++)
+            {
+                datatable.AddCell(dataGridViewContent.Columns[i].HeaderText);
+            }
+            datatable.HeaderRows = 1;
+            datatable.DefaultCell.BorderWidth = 1;
+            for (i = 0; i < dataGridViewContent.Rows.Count; i++)
+            {
+                for (j = 0; j < dataGridViewContent.Columns.Count; j++)
+                {
+                    if (dataGridViewContent[j, i].Value != null)
+                    {
+                        datatable.AddCell(new Phrase(dataGridViewContent[j, i].Value.ToString()));//En esta parte, se esta agregando un renglon por cada registro en el datagrid
+                    }
+                }
+                datatable.CompleteRow();
+            }
+            document.Add(datatable);
+        }
+        public float[] GetTamañoColumnas(DataGridView dg)
+        {
+            float[] values = new float[dg.ColumnCount];
+            for (int i = 0; i < dg.ColumnCount; i++)
+            {
+                values[i] = (float)dg.Columns[i].Width;
+            }
+            return values;
+
+        }
+        #endregion
 
     }
 }

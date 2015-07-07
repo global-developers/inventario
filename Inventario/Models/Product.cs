@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventario.Models
 {
-    class Product
+    public class Product
     {
         public int Id 
         {
@@ -20,14 +20,28 @@ namespace Inventario.Models
             set { name = value; }
         }
 
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
         public double Price
         {
             get { return price; }
             set { price = value; }
         }
 
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
+
         private int id;
         private string name;
+        private string description;
         private double price;
+        private int count;
     }
 }

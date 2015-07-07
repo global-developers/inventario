@@ -66,6 +66,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Desktop\ReportesItextSharp-master\itextsharp-all-5.4.1\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\..\..\..\..\Desktop\winforms-modernui-master\MetroFramework\bin\Release\MetroFramework.dll</HintPath>
     </Reference>
@@ -225,7 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="1436249533_power_blue.ico" />
-    <Content Include="power.ico" />
+    <None Include="Resources\1436262829_pdf.png" />
     <None Include="Resources\1436249533_power_blue.png" />
     <None Include="Resources\yo.jpg" />
     <None Include="Resources\shopping-add.png" />

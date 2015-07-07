@@ -18,7 +18,7 @@ namespace Inventario
         public Start()
         {
             InitializeComponent();
-
+            cnn = new Connection();
         }
 
         private void Start_Load(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Inventario
             cnn.close();
         }
 
-        private static Connection cnn = new Connection();
+        private static Connection cnn;
 
     }
 
