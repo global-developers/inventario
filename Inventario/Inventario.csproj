@@ -51,7 +51,7 @@
     <StartupObject>Inventario.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>power.ico</ApplicationIcon>
+    <ApplicationIcon>1436249533_power_blue.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>AEF7B90AB9A003753AFA967228215047E4CB133B</ManifestCertificateThumbprint>
@@ -66,6 +66,15 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\..\Desktop\winforms-modernui-master\MetroFramework\bin\Release\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\..\..\..\Desktop\winforms-modernui-master\MetroFramework.Design\bin\Release\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\..\..\..\Desktop\winforms-modernui-master\MetroFramework.Fonts\bin\Release\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
@@ -215,7 +224,10 @@
     <None Include="Resources\power.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1436249533_power_blue.ico" />
     <Content Include="power.ico" />
+    <None Include="Resources\1436249533_power_blue.png" />
+    <None Include="Resources\yo.jpg" />
     <None Include="Resources\shopping-add.png" />
     <None Include="Resources\shopping-cancel.png" />
     <None Include="Resources\shopping.png" />

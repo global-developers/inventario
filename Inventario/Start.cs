@@ -9,10 +9,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Inventario.Helpers;
+using MetroFramework.Forms;
 
 namespace Inventario
 {
-    public partial class Start : Form
+    public partial class Start : MetroForm
     {
         public Start()
         {

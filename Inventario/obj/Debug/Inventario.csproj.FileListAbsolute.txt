@@ -16,3 +16,8 @@ C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\ob
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\obj\Debug\Inventario.application
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\obj\Debug\Inventario.csproj.ResolveComReference.cache
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\obj\Debug\Inventario.Ventas.resources
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Design.dll
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.dll
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Design.pdb
+C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Fonts.pdb

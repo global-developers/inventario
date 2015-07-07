@@ -63,6 +63,16 @@ namespace Inventario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1436249533_power_blue {
+            get {
+                object obj = ResourceManager.GetObject("1436249533_power_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clear {
             get {
                 object obj = ResourceManager.GetObject("clear", resourceCulture);
@@ -266,6 +276,16 @@ namespace Inventario.Properties {
         internal static System.Drawing.Bitmap window_min_over {
             get {
                 object obj = ResourceManager.GetObject("window-min-over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yo {
+            get {
+                object obj = ResourceManager.GetObject("yo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

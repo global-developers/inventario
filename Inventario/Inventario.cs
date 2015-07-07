@@ -9,11 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MetroFramework.Forms;
+using MetroFramework.Controls;
 
 namespace Inventario
 {
-    public partial class Inventario : Form
+    public partial class Inventario : MetroForm
     {
+
+        private Form parent;
+        private About about;
+        private static Connection cnn = new Connection();
+
         public Inventario()
         {
             InitializeComponent();
@@ -48,12 +55,9 @@ namespace Inventario
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            about = new About();
             about.ShowDialog();
         }
-
-        private Form parent;
-        private About about = new About();
-        private static Connection cnn = new Connection();
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -122,7 +126,7 @@ namespace Inventario
             CreateBtn.Enabled = false;
             foreach(Control control in FormPanel.Controls)
             {
-                if(control is TextBox)
+                if(control is MetroTextBox)
                 {
                     control.Text = TableDataGridView.Rows[row].Cells[column].Value.ToString();
                     column++;
@@ -159,24 +163,28 @@ namespace Inventario
                 FormPanel.AutoScroll = true;
                 FormPanel.Controls.Clear();
 
-                Label label = new Label();
-                label.MaximumSize = new Size(232, 13);
-                label.Text = select_table;
+                MetroLabel label = new MetroLabel();
                 label.Location = new Point(0, 0);
+                label.Size = new Size(232, 19);
+                label.MaximumSize = new Size(232, 19);
+                label.Text = select_table;
                 FormPanel.Controls.Add(label);
 
                 foreach (DataGridViewColumn column in TableDataGridView.Columns)
                 {
-                    label = new Label();
-                    label.MaximumSize = new Size(232, 13); 
+                    label = new MetroLabel();
+                    label.Location = new Point(_x, 30 + (_y * _columns));
+                    label.Size = new Size(232, 19);
+                    label.MaximumSize = new Size(232, 19); 
                     label.Text = column.Name;
-                    label.Location = new Point(_x, 20 + (_y * _columns));
                     FormPanel.Controls.Add(label);
-                    TextBox textbox = new TextBox();
-                    textbox.Size = new Size(232, 20);
+                    MetroTextBox textbox = new MetroTextBox();
+                    textbox.Location = new Point(_x, 50 + (_y * _columns));
+                    textbox.Size = new Size(232, 23);
+                    textbox.MaximumSize = new Size(232, 23);
                     textbox.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right;
-                    textbox.Location = new Point(_x, 37 + (_y * _columns));
                     textbox.Enabled =  Array.Exists(noEdit, element => element == column.Name) ? false : true;
+                    textbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
                     FormPanel.Controls.Add(textbox);
                     _columns++;
                 }   
@@ -190,7 +198,7 @@ namespace Inventario
 
             foreach (Control control in FormPanel.Controls)
             {
-                if (control is TextBox)
+                if (control is MetroTextBox)
                 {
                     if (int.TryParse(control.Text.ToString(), out id))
                     {
@@ -226,7 +234,7 @@ namespace Inventario
 
             foreach (Control control in FormPanel.Controls)
             {
-                if (control is TextBox)
+                if (control is MetroTextBox)
                 {
                     control.Text = "";
                 }
@@ -256,7 +264,7 @@ namespace Inventario
             foreach (Control control in FormPanel.Controls)
             {
 
-                if(control is Label)
+                if(control is MetroLabel)
                 {
                     if (!Array.Exists(noEdit, element => element == control.Text) && select_table != control.Text)
                     {
@@ -264,7 +272,7 @@ namespace Inventario
                     }
                 }
 
-                if (control is TextBox)
+                if (control is MetroTextBox)
                 {
                     if (int.TryParse(control.Text.ToString(), out i) && id == 0)
                     {
@@ -326,7 +334,7 @@ namespace Inventario
             foreach (Control control in FormPanel.Controls)
             {
 
-                if (control is Label)
+                if (control is MetroLabel)
                 {
                     if (!Array.Exists(noEdit, element => element == control.Text) && select_table != control.Text)
                     {
@@ -334,7 +342,7 @@ namespace Inventario
                     }
                 }
 
-                if (control is TextBox)
+                if (control is MetroTextBox)
                 {
                     if (control.Enabled)
                     {

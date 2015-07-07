@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,10 +11,11 @@ using System.Windows.Forms;
 
 namespace Inventario
 {
-    public partial class Ventas : Form
+    public partial class Ventas : MetroForm
     {
 
         private Form parent;
+        private About about;
 
         public Ventas()
         {
@@ -34,6 +36,12 @@ namespace Inventario
         {
             this.Hide();
             parent.Show();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            about = new About();
+            about.ShowDialog();
         }
     }
 }

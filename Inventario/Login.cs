@@ -11,10 +11,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Inventario.Helpers;
 using Inventario.Models;
+using MetroFramework.Forms;
+using MetroFramework;
 
 namespace Inventario
 {
-    public partial class Login : Form
+    public partial class Login : MetroForm
     {
         public Login()
         {
@@ -40,41 +42,12 @@ namespace Inventario
             cnn.close();
             this.Close();
         }
-        
-        private void CloseBtn_MouseHover(object sender, EventArgs e)
-        {
-            CloseBtn.BackgroundImage = Properties.Resources.window_close_over;
-        }
-
-        private void CloseBtn_MouseLeave(object sender, EventArgs e)
-        {
-            CloseBtn.BackgroundImage = Properties.Resources.window_close;
-        }
-
-        private void CloseBtn_MouseUp(object sender, MouseEventArgs e)
-        {
-            CloseBtn.BackgroundImage = Properties.Resources.window_close_over;
-        }
 
         private void MinBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void MinBtn_MouseHover(object sender, EventArgs e)
-        {
-            MinBtn.BackgroundImage = Properties.Resources.window_min_over;
-        }
-
-        private void MinBtn_MouseLeave(object sender, EventArgs e)
-        {
-            MinBtn.BackgroundImage = Properties.Resources.window_min;
-        }
-
-        private void MinBtn_MouseUp(object sender, MouseEventArgs e)
-        {
-            MinBtn.BackgroundImage = Properties.Resources.window_min_over;
-        }
 
         private Form parent;
         private int xR;
@@ -162,8 +135,8 @@ namespace Inventario
                         user.Category = new Category(reader.GetInt32(7), reader.GetString(8));
                     }
 
-                    MessageBox.Show("Bienvenido " + user.Category.Name + " " +  user.FullName);
-
+                    MetroMessageBox.Show(this, "Bienvenido " + user.Category.Name + " " + user.FullName, "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     if (user.CategoryId == 1 || user.Category.Name.Equals("Administrador"))
                     {
                         inventario.Show();
@@ -176,14 +149,14 @@ namespace Inventario
                     }
                     else 
                     {
-                        MessageBox.Show("Usted no cuenta con permiso para accesar!!!");
+                        MetroMessageBox.Show(this, "Usted no cuenta con permiso para accesar!!!", "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 else
                 {
                     user = null;
-                    MessageBox.Show(String.Format("{0} ó {1} incorrectos", UsernameLbl.Text.ToString(), PasswordLbl.Text.ToString()));
+                    MetroMessageBox.Show(this, String.Format("{0} ó {1} incorrectos", UsernameLbl.Text.ToString(), PasswordLbl.Text.ToString()), "Login - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 reader.Close();
