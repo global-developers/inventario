@@ -37,7 +37,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Administrador','2015-06-24 09:53:17','2015-06-24 09:53:17'),(2,'Vendedor','2015-06-24 09:53:17','2015-06-24 09:53:17');
+INSERT INTO `categories` VALUES (1,'Administrador','2015-07-07 19:17:18','2015-07-07 19:17:18'),(2,'Vendedor','2015-07-07 19:17:18','2015-07-07 19:17:18');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES ('2015_06_15_181045_create_categories_table',1),('2015_06_16_055856_create_products_table',1),('2015_06_16_131129_create_users_table',1);
+INSERT INTO `migrations` VALUES ('2015_06_15_181045_create_categories_table',1),('2015_06_16_055856_create_products_table',1),('2015_06_16_131129_create_users_table',1),('2015_06_30_124235_create_ventas_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,11 +74,15 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `description` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   `price` double(15,2) NOT NULL,
+  `color` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `barcode` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `count` int(10) unsigned NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +91,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Cassin and Sons',932.20,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(2,'Weber Group',791.11,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(3,'Beer-Hermann',421.18,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(4,'Carter-Murray',101.01,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(5,'Yost, Maggio and Runolfsdottir',118.55,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(6,'Mante-Schoen',6.14,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(7,'Crist, Carter and Baumbach',336.11,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(8,'Funk-Boyer',359.61,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(9,'Cassin, Boehm and Strosin',315.94,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(10,'Streich, Heller and Hane',303.80,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(11,'Cole-Corwin',223.00,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(12,'Walker Group',660.91,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(13,'Barton, Murphy and Pouros',790.69,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(14,'Barrows, Wintheiser and Bailey',64.91,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(15,'Wilkinson and Sons',863.86,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(16,'Gislason-Fahey',482.12,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(17,'Stoltenberg LLC',949.52,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(18,'Haag, Stiedemann and Brakus',714.01,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(19,'Rosenbaum, Macejkovic and Kirlin',458.83,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(20,'Watsica, Schaden and D\'Amore',538.29,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(21,'Runolfsson-Koss',252.11,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(22,'Donnelly and Sons',748.90,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(23,'Nikolaus, Hickle and Gutkowski',221.07,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(24,'Koss Ltd',10.57,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(25,'Daugherty, Moore and Torphy',16.60,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(26,'Johns, Denesik and Kub',321.66,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(27,'Green-Howell',613.77,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(28,'Lang-Douglas',55.17,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(29,'Brekke Group',915.49,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(30,'Anderson-Kiehn',394.90,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(31,'Tromp-Kertzmann',860.44,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(32,'Leannon, O\'Connell and Mayer',278.49,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(33,'Predovic-Dickens',558.96,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(34,'Morissette-Braun',515.34,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(35,'Sawayn LLC',349.45,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(36,'Schaden-Nitzsche',754.57,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(37,'Bradtke LLC',210.61,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(38,'Mills Group',889.36,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(39,'Treutel-Braun',987.84,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(40,'Harber Ltd',661.34,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(41,'Borer-Kemmer',692.38,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(42,'Hintz, Vandervort and Durgan',851.61,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(43,'Ebert-Nienow',21.20,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(44,'Reichert Inc',376.50,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(45,'Skiles PLC',244.77,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(46,'Davis-Haley',470.81,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(47,'Wunsch, Osinski and Steuber',55.62,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(48,'Ward, Barton and Schiller',490.38,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(49,'Pfeffer Ltd',443.96,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(50,'Kilback, Buckridge and Rutherford',110.91,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(51,'Murazik Inc',525.02,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(52,'Barrows Group',826.20,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(53,'Von Group',26.08,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(54,'Prosacco, Goyette and Berge',162.26,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(55,'Berge, Hagenes and Langosh',985.63,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(56,'Gulgowski Ltd',936.13,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(57,'Bode Group',369.68,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(58,'Collier, Padberg and Homenick',786.26,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(59,'Mante, Nienow and Von',855.47,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(60,'Terry-Brown',566.35,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(61,'Upton PLC',614.84,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(62,'Towne-Fay',819.94,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(63,'Ratke and Sons',726.34,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(64,'Yundt, Price and Herman',406.63,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(65,'Bode-Feest',128.89,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(66,'Kuhn LLC',93.69,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(67,'Little-Nader',487.36,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(68,'Feil-Krajcik',459.71,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(69,'Greenfelder Ltd',959.11,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(70,'Upton-Hettinger',386.07,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(71,'Hudson Ltd',99.65,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(72,'Becker-Koch',304.09,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(73,'Borer, Botsford and DuBuque',49.20,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(74,'Terry and Sons',60.27,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(75,'Schuppe, Waelchi and Daniel',100.51,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(76,'Ferry-Harber',55.54,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(77,'Kerluke-Herzog',844.88,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(78,'Volkman and Sons',609.04,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(79,'Effertz, Bayer and Bayer',735.91,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(80,'McGlynn-Lowe',275.11,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(81,'Aufderhar, Oberbrunner and Herzog',942.82,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(82,'Hansen-Yost',883.68,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(83,'Mann-Ortiz',198.00,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(84,'Bartell, Nicolas and Veum',73.28,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(85,'Batz-Fay',249.12,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(86,'Jacobson, Bergnaum and Will',507.14,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(87,'Emard, Hane and Welch',570.41,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(88,'Morissette-Kuphal',594.67,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(89,'Hintz-Padberg',185.32,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(90,'Harvey Ltd',367.88,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(91,'Streich Ltd',403.17,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(92,'Hoeger LLC',951.27,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(93,'Hyatt PLC',665.25,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(94,'Halvorson LLC',306.52,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(95,'Sauer, Bednar and Waters',728.09,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(96,'Watsica, Schultz and Strosin',303.47,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(97,'Gaylord-Hilll',947.38,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(98,'Ebert Group',742.13,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(99,'Hammes-Rodriguez',379.19,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(100,'Kub, Prosacco and Prohaska',128.07,'2015-06-24 09:53:17','2015-06-24 09:53:17');
+INSERT INTO `products` VALUES (1,'Secadora','Secadora 15Kg Mabe Blanca SMW817',1200.00,'blanca','SMW817SXGBB',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(2,'Central','Central de Vapor Jiffy',5000.00,'rojo','J2000',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(3,'Parrilla','Parrilla Kups Panini',2000.00,'blanco','PG700063',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(4,'Batidora','Batidora de inmersión con picador Oster',700.00,'blanca','Z612-13',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(5,'Oster Profesional','Oster Profesional',1400.00,'silver','KJ885-93',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(6,'Extractor','Extractor de uso rudo Turmix',800.00,'rojo','TU04',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(7,'Licuadora','Licuadora Reversible Oster',1500.00,'azul','BRLy07-S00',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(8,'Batidora','Batidora Black & Decker 5 Litros',700.00,'blanco','MX900',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(9,'Horno de Microondas','Horno de Microondas 1.1 Pies Cúbicos General Electric Profile',2700.00,'silver','PEB1152SFE',3,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(10,'Parrilla','Parrilla 70cm Teka Cristal',7000.00,'amarillo','ZLUX705GAIALTR',3,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(11,'Batidora','Batidora Oster Manual 6 Velocidades',500.00,'blanco','ZH88Q-47',3,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(12,'Aspiradora','Aspiradora Manual Koblenz',600.00,'azul','HV-120-A',3,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(13,'Batidora','Batidora Kitchen Aid 6.8 Litros Acero Inoxidable',900.00,'silver','KP26M1XNP',4,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(14,'Batidora','Batidora de Pedestal Oster 4 Litros Acero Inoxidable M2700-13',1400.00,'amarillo','M2700-13',4,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(15,'Sandwichera','Sandwichera Oster',600.00,'amarillo','XLL33-99',4,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(16,'Batidora','Batidora Kitchen Aid Artisan 5 Litros',800.00,'blanco','KSM150PSWH',5,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(17,'Batidora','Batidora Hamilton Beach',900.00,'roja','COSX66',5,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(18,'Extractor','Extractor de jugos Oster',700.00,'amarillo','LK77DR',5,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(19,'Batidora','Batidora Kitchen Aid',800.00,'rojo','KSM7581',5,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(20,'Parrilla','Parrilla Eléctrica 80cm Teka Inducción',2500.00,'negro','IRS843',6,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(21,'Cafetera','Cafetera Oster de 946 ml',350.00,'azul','3301',6,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(22,'Batidora','Batidora Kitchen Aid',900.00,'blanco','KSM150PSMC',6,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(23,'Licuadora','Licuadora Oster',1500.00,'roja','M4126-13',7,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(24,'Licuadora','Licuadora Oster 3 Velocidades',1100.00,'metal','M4655-813',7,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(25,'Batidora','Batidora Kitchen Aid Artisan 5.6 Litros Acero Inoxidable',750.00,'metal','Z99HSF',8,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(26,'Parrilla','Parrilla 30cm Teka Acero Inoxidable',3500.00,'metal','EM302G',8,'2015-07-07 19:17:18','2015-07-07 19:17:18');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,7 +112,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `users_category_id_foreign` (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,8 +121,34 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Cristian Jaramillo','cristian_gerar@hotmail.com','s3cret',1,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(2,'Valentine Schaefer MD','Bradtke.Khalil@Kuvalis.info','secret',2,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(3,'Larue Keeling','Kennith00@Kassulke.com','secret',1,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(4,'Dr. Jamel Raynor Sr.','Hilda85@Jakubowski.com','secret',1,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(5,'Prof. Derek Trantow','Jabari.Kshlerin@gmail.com','secret',1,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(6,'Ali Turner','Koelpin.Buford@yahoo.com','secret',1,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(7,'Scottie Hilll','pTerry@gmail.com','secret',1,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(8,'Abbigail Heaney','xMcKenzie@hotmail.com','secret',1,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(9,'Jamil Braun','Gutmann.Levi@yahoo.com','secret',2,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(10,'Aileen Kautzer DVM','Camron01@Keebler.net','secret',2,'2015-06-24 09:53:17','2015-06-24 09:53:17'),(11,'Johann Collier','Ansley.OReilly@yahoo.com','secret',2,'2015-06-24 09:53:17','2015-06-24 09:53:17');
+INSERT INTO `users` VALUES (1,'Cristian Jaramillo','cristian_gerar@hotmail.com','s3cret',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(2,'Cristian Jaramillo','cristian.gerar@gmail.com','s3cret',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(3,'Andrea','andymenjos@gmail.com','s3cret',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(4,'Monica','monicadlr18@hotmail.com','s3cret',1,'2015-07-07 19:17:18','2015-07-07 14:25:11'),(5,'Fausto Ryan','sydnee.leuschke@gmail.com','s3cret',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(6,'Myah Littel','sigmund31@marvin.info','s3cret',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(7,'Lempi Waelchi','marco76@hotmail.com','s3cret',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(8,'Davon Hilpert','angela.harris@konopelski.com','s3cret',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(9,'Zelda Williamson I','rschumm@yahoo.com','s3cret',2,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(10,'Krystel Flatley','treutel.harmon@hotmail.com','s3cret',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(11,'Hoyt Schinner','vokon@yahoo.com','s3cret',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(12,'Chasity Lowe','crohan@gmail.com','s3cret',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(13,'Leola Hilll','haley36@mills.org','s3cret',1,'2015-07-07 19:17:18','2015-07-07 19:17:18'),(14,'Prof. Arne Hintz II','aframi@beer.net','s3cret',2,'2015-07-07 19:17:18','2015-07-07 19:17:18');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ventas`
+--
+
+DROP TABLE IF EXISTS `ventas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ventas` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `ventas_user_id_foreign` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ventas`
+--
+
+LOCK TABLES `ventas` WRITE;
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -130,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-23 23:58:35
+-- Dump completed on 2015-07-07 17:17:05
