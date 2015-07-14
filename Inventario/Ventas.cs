@@ -23,7 +23,10 @@ namespace Inventario
         private User user;
         private Connection cnn;
         private string query_search = "SELECT * FROM products WHERE id='{0}'";
-
+        private string insert_register_ventas = "INSERT INTO register_ventas (venta_id, product_id, count) VALUES ";
+        private string insert_vendedor = "INSERT INTO ventas (user_id,  created_at, updated_at) VALUES ('{0}', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP())";
+        private double monto_venta = 0.00;
+        
         public Ventas()
         {
             InitializeComponent();
@@ -34,7 +37,7 @@ namespace Inventario
         {
             this.parent = parent;
             this.user = user;
-
+            insert_vendedor = String.Format(insert_vendedor, user.Id);
         }
 
         private void Ventas_FormClosed(object sender, FormClosedEventArgs e)
@@ -96,7 +99,8 @@ namespace Inventario
                             metroGrid1.Rows[last].Cells[4].Value = 1;
                         }
 
-                    
+                        UpdateMontoVenta();
+                                
                     }
                 }
                 else {
@@ -128,6 +132,69 @@ namespace Inventario
 
             return row;
         }
+
+        private void UpdateMontoVenta()
+        { 
+            monto_venta = 0;
+
+            for (int i = 0; i < metroGrid1.Rows.Count; i++)
+            {
+                monto_venta += (Convert.ToDouble(metroGrid1.Rows[i].Cells[3].Value)  * Convert.ToInt32(metroGrid1.Rows[i].Cells[4].Value));
+            }
+
+            VentaMetroLabel.Text = "$ " + monto_venta;
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            metroGrid1.Rows.Clear();
+            UpdateMontoVenta();
+        }
+
+        private void metroTile3_Click(object sender, EventArgs e)
+        {
+            if(metroGrid1.Rows.Count > 0)
+            {
+                int id = 0;
+                var cmd = cnn.GetMysqlCommand(insert_vendedor);
+                var reader = cmd.ExecuteReader();
+                
+                reader.Close();
+
+                cmd = cnn.GetMysqlCommand("SELECT MAX(id) AS id FROM ventas");
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                        id = reader.GetInt32(0);
+                }
+
+                reader.Close();
+
+                cmd = cnn.GetMysqlCommand(GenerateVenta(id));
+                reader = cmd.ExecuteReader();
+
+                metroTile2_Click(sender, e);
+                reader.Close();
+                MetroMessageBox.Show(this, "Venta " + id + " finalizada con exito!", "Ventas - PowerDev", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+        }
+
+        private string GenerateVenta(int id)
+        {
+            insert_register_ventas = "INSERT INTO register_ventas (venta_id, product_id, count, created_at, updated_at) VALUES ";
+
+            for (int i = 0; i < metroGrid1.Rows.Count; i++)
+            {
+                insert_register_ventas += String.Format("('{0}', '{1}', '{2}', CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP())", id, metroGrid1.Rows[i].Cells[0].Value, metroGrid1.Rows[i].Cells[4].Value);
+                if ((i + 1) < metroGrid1.Rows.Count)
+                    insert_register_ventas += ", ";
+            }
+
+            return insert_register_ventas;
+        }
+
 
     }
 }

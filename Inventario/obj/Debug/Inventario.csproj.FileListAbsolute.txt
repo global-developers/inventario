@@ -23,3 +23,24 @@ C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bi
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\MetroFramework.Fonts.pdb
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\itextsharp.dll
 C:\Users\Cristian\Documents\Visual Studio 2013\Projects\Inventario\Inventario\bin\Debug\itextsharp.xml
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\Inventario.exe.config
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.csproj.ResolveComReference.cache
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.exe
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.pdb
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\Inventario.exe.manifest
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\Inventario.application
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\Inventario.exe
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\Inventario.pdb
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\itextsharp.xml
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\MetroFramework.Design.pdb
+C:\Users\Cristian\Desktop\inventario\Inventario\bin\Debug\MetroFramework.Fonts.pdb
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.csprojResolveAssemblyReference.cache
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.About.resources
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.Inventario.resources
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.Login.resources
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.Properties.Resources.resources
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.Start.resources
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.Ventas.resources
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.csproj.GenerateResource.Cache
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.exe.manifest
+C:\Users\Cristian\Desktop\inventario\Inventario\obj\Debug\Inventario.application
